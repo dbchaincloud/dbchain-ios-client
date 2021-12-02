@@ -25,7 +25,7 @@ import Alamofire
 //         */
 //        case updateRelationFunction = "function_name_update_relation"
 //        /// 冻结一条关联数据 ( 结构化数据相关操作 )
-//        /* ${tableName},$id,tableName__${FilableTable.tableName},foreignKeyName__filabletype,foreignKeyName__filableid,tableName__${TaggableTable.tableName},foreignKeyName__taggabletype,foreignKeyName__taggableid
+//        /* ${tableName},$id,tableName__${FilableTa                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                ble.tableName},foreignKeyName__filabletype,foreignKeyName__filableid,tableName__${TaggableTable.tableName},foreignKeyName__taggabletype,foreignKeyName__taggableid
 //         */
 //        case freezeOneDataFunction = "function_name_freeze_relation"
 
@@ -42,16 +42,16 @@ import Alamofire
 
 
 
-//let dbchain = DBChainKit.init(appcode: "8BSMXFVQ5W",
-//                              chainid: "ytbox",
-//                              baseurl: "https://chain-ytbox.dbchain.cloud/relay/",
-//                              encryptType: Secp256k1())
-
-
-let dbchain = DBChainKit.init(appcode: "5APTSCPSF7",
-                              chainid: "testnet",
-                              baseurl: "https://controlpanel.dbchain.cloud/relay/",
+let dbchain = DBChainKit.init(appcode: "8BSMXFVQ5W",
+                              chainid: "ytbox",
+                              baseurl: "https://chain-ytbox.dbchain.cloud/relay/",
                               encryptType: Secp256k1())
+
+
+//let dbchain = DBChainKit.init(appcode: "5APTSCPSF7",
+//                              chainid: "testnet",
+//                              baseurl: "https://controlpanel.dbchain.cloud/relay/",
+//                              encryptType: Secp256k1())
 
 class ViewController: UIViewController {
 
@@ -88,28 +88,26 @@ class ViewController: UIViewController {
               dbchain.token)
 
 //      获取积分 --- 查询
-//        dbchain.registerNewAccountNumber { (state, result) in
-//            print(state,"\(result)")
-//        }
+        dbchain.registerNewAccountNumber { (state, result) in
+            print(state,"\(result)")
+        }
 
 //      整表查询
-
-//        dbchain.queryDataByTablaName("user") { (tagResult) in
-//            print(tagResult)
-//        }
+        dbchain.queryDataByTablaName("user") { (tagResult) in
+            print(tagResult)
+        }
 
         /// ID 查询
-//        dbchain.queryDataByID(tableName: "user", id: "28") { (result) in
-//            print(result)
-//        }
+        dbchain.queryDataByID(tableName: "user", id: "28") { (result) in
+            print(result)
+        }
 
 
 //         条件查询
-
-//        let dic = ["created_by":dbchain.address!]
-//        dbchain.queryDataByCondition("user", dic) { (result) in
-//            print(result)
-//        }
+        let dic = ["created_by":dbchain.address!]
+        dbchain.queryDataByCondition("user", dic) { (result) in
+            print(result)
+        }
 
         /// 传承数据查询
 //        dbchain.queryInheritListData("inherit", "query_inherit", fieldDic: nil) { (result) in
@@ -139,17 +137,18 @@ class ViewController: UIViewController {
 
 
         /// 单条数据函数请求
-//        var fileArgumentArr : [String] = ["tableName__file"]
-//        let dataArr : [String] = ["我是测试的IMG_2381.PNG","QmUPh8qQg5GzZACLtrc2UrEq5QwP1NhTSSMfFHWA4ym9y7","194.34KB","","\(dbchain.address!)"]
-//
-//        let jsonDataArrStr = String().getJSONStringFromArray(dataArr as NSArray)
-//        fileArgumentArr.append(jsonDataArrStr)
-//        let file_function_jsonStr = String().getJSONStringFromArray(fileArgumentArr as NSArray)
-//        print(file_function_jsonStr)
-//
-//        dbchain.functionInsertRow(signArgument: file_function_jsonStr, functionName: "function_name_insert_mult") { (result) in
-//            print(result)
-//        }
+        var fileArgumentArr : [String] = ["tableName__file"]
+        let dataArr : [String] = ["我是测试的IMG_2381.PNG","QmUPh8qQg5GzZACLtrc2UrEq5QwP1NhTSSMfFHWA4ym9y7","194.34KB","","\(dbchain.address!)"]
+
+        let jsonDataArrStr = String().getJSONStringFromArray(dataArr as NSArray)
+        fileArgumentArr.append(jsonDataArrStr)
+        let file_function_jsonStr = String().getJSONStringFromArray(fileArgumentArr as NSArray)
+        print(file_function_jsonStr)
+
+        dbchain.functionInsertRow(signArgument: file_function_jsonStr, functionName: "function_name_insert_mult") { (result) in
+            print(result)
+        }
+
 
     }
 
@@ -174,7 +173,6 @@ class ViewController: UIViewController {
 
 
 extension String {
-
     //数组(Array)转换为JSON字符串
    public func getJSONStringFromArray(_ array:NSArray) -> String {
         if (!JSONSerialization.isValidJSONObject(array)) {
@@ -184,7 +182,6 @@ extension String {
         let JSONString = NSString(data:data as Data,encoding: String.Encoding.utf8.rawValue)
         return JSONString! as String
     }
-
 }
 
 
