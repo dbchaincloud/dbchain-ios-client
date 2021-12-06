@@ -2,7 +2,7 @@
 Pod::Spec.new do |spec|
 
   spec.name         = "DBChainKit"
-  spec.version      = "2.0.1"
+  spec.version      = "2.0.2"
   spec.summary      = "DBChain 系列库,生成BIP39 助记词. 通过助记词生成私钥, 私钥生成公钥, 公钥得出链地址"
   spec.description  = 'DBChain 系列库,生成BIP39 助记词. 通过助记词生成私钥, 私钥生成公钥, 公钥得出链地址'
   spec.homepage     = "https://github.com/dbchaincloud/dbchain-ios-client"
