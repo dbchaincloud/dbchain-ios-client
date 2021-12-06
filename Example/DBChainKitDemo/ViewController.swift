@@ -41,17 +41,17 @@ import Alamofire
 
 
 
-
+/// Secp256k1 签名验签示例
 let dbchain = DBChainKit.init(appcode: "8BSMXFVQ5W",
                               chainid: "ytbox",
                               baseurl: "https://chain-ytbox.dbchain.cloud/relay/",
                               encryptType: Secp256k1())
 
-
+/// Sm2 签名验签示例
 //let dbchain = DBChainKit.init(appcode: "5APTSCPSF7",
 //                              chainid: "testnet",
 //                              baseurl: "https://controlpanel.dbchain.cloud/relay/",
-//                              encryptType: Secp256k1())
+//                              encryptType: Sm2())
 
 class ViewController: UIViewController {
 

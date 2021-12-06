@@ -1,7 +1,7 @@
 PODS:
   - Alamofire (5.4.4)
   - CryptoSwift (1.4.2)
-  - DBChainKit/secp256k1 (2.0.1):
+  - DBChainKit/secp256k1 (2.0.2):
     - Alamofire
     - HDWalletSDK
     - Secp256k1Signing
@@ -30,11 +30,11 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   CryptoSwift: a532e74ed010f8c95f611d00b8bbae42e9fe7c17
-  DBChainKit: 62e98c5b39243ddea35f6b738a158c53f72da729
+  DBChainKit: dcd6923a23ca3301163bc54bdf8a4d31575247b6
   HDWalletSDK: 1ef2cf954a5999e420e2735164b2c697be7445f4
   secp256k1.swift: a7e7a214f6db6ce5db32cc6b2b45e5c4dd633634
   Secp256k1Signing: 9750c17903ee97a8ae7c32c393cf3ac9fc1ea9cf
 
-PODFILE CHECKSUM: 8f3753b31ab8698f2de36de6c2d0e2961e92643d
+PODFILE CHECKSUM: 104b765d1dd4140b7867e18fcda79ba1dc136ac2
 
 COCOAPODS: 1.11.2
